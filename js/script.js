@@ -15,13 +15,16 @@ function jump() {
 
             // descendo
             let downInterval = setInterval(() => {
-                position -= 20;
-                dino.style.bottom = position + 'px';
-            }, 20);
+                if (position <= 0) {
+                    clearInterval(downInterval);
+                } else {
+                    position -= 20;
+                    dino.style.bottom = position + 'px';
+                }
+            }, 20);                
         } else {
             //subindo
-            position += 20;
-    
+            position += 20;    
             dino.style.bottom = position + 'px';
         }
     }, 20);
