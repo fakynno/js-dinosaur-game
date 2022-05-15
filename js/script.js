@@ -52,6 +52,10 @@ function createCactus() {
         if (cactusPosition < -60) {
             clearInterval(leftInterval);
             background.removeChild(cactus);
+            // verifica se o cactus bateu no dinossauro
+        } else if (cactusPosition > 0 && cactusPosition < 60) {
+            clearInterval(leftInterval);
+            document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
         } else {            
             // movimenta o cactus
             cactusPosition -= 10;
