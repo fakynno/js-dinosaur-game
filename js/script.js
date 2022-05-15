@@ -40,10 +40,17 @@ function createCactus() {
     const cactus = document.createElement('div');
     let cactusPosition = 1000;
 
-    // logica para movimentar o cactus
     let leftInterval = setInterval(() => {
-        cactusPosition -= 10;
-        cactus.style.left = cactusPosition + 'px';
+        
+        // faz o cactus desaparecer quando sair da tela
+        if (cactusPosition < -60) {
+            clearInterval(leftInterval);
+            background.removeChild(cactus);
+        } else {            
+            // movimenta o cactus
+            cactusPosition -= 10;
+            cactus.style.left = cactusPosition + 'px';
+        }
     }, 20);
     
     cactus.classList.add('cactus');
