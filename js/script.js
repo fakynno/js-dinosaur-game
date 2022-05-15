@@ -39,6 +39,12 @@ function jump() {
 function createCactus() {
     const cactus = document.createElement('div');
     let cactusPosition = 1000;
+    // variavel para criar cactus aleatórios
+    let randomTime = Math.random() * 6000;
+    
+    cactus.classList.add('cactus');
+    cactus.style.left = 1000 + 'px';
+    background.appendChild(cactus);
 
     let leftInterval = setInterval(() => {
         
@@ -53,9 +59,7 @@ function createCactus() {
         }
     }, 20);
     
-    cactus.classList.add('cactus');
-    cactus.style.left = 1000 + 'px';
-    background.appendChild(cactus);
+    setTimeout(createCactus, randomTime);
 }
 
 createCactus();
