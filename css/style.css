@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray;
+    background: #fafafa;
 }
 
 .dino {
@@ -26,10 +26,20 @@ body {
 
 @keyframes slideright {
     from {
-        background-position: 70000%;
+        background-position: 40000%;
     }
 
     to {
         background-position: 0;
     }
+}
+
+.background {
+    position: absolute;
+    bottom: 0;
+    background-image: url(../images/background.png);
+    background-repeat: repeat-x;
+    animation: slideright 1000s infinite linear;
+    width: 100%;
+    height: 200px;
 }
